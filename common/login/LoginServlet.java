@@ -14,14 +14,14 @@ import myclass.LoginCheck;
 /**
  * Servlet implementation class login
  */
-@WebServlet("/login")
-public class login extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public login() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,14 +31,14 @@ public class login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		HttpSession session = request.getSession(false);
 		if(session == null){
 	   	    session = request.getSession(true);
 		}
 	   	/* 認証に成功したら、statusをnullにする */
-		session.setAttribute("status", "Not Auth");
+//		session.setAttribute("status", "Not Auth");
 		String index = (String)session.getAttribute("login_uri");
 
 		Object user_id = request.getParameter("user");
@@ -53,7 +53,7 @@ public class login extends HttpServlet {
 
 		/* 認証済みにセット */
 		session.setAttribute("user_name", user_name);
-		session.setAttribute("login", "OK");
+		session.setAttribute("name", "OK");
 		response.sendRedirect(index);
 	}
 }

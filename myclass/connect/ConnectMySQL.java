@@ -31,7 +31,7 @@ public class ConnectMySQL implements DbConfig{
 		try
 		{
 			InitialContext ctx = new InitialContext();//JNDIで検索をするときの出発点です。ファイルシステムに例えると、ルートディレクトリに相当します。Contextは、ディレクトリに相当します。
-			ds = (DataSource)ctx.lookup(JENDI_NAME+DB_NAME);//Contextのlookupというメソッドを使い、"java:comp/env/jdbc/db名"という名前からDataSource型のインスタンスを取得.この名前を「リソース参照名」といいます。Javaのコンポーネントは、"java:comp/env/"という文字列からはじまるリソース参照名を持つように定められています。
+			ds = (DataSource)ctx.lookup(JENDI_NAME + DB_NAME);//Contextのlookupというメソッドを使い、"java:comp/env/jdbc/db名"という名前からDataSource型のインスタンスを取得.この名前を「リソース参照名」といいます。Javaのコンポーネントは、"java:comp/env/"という文字列からはじまるリソース参照名を持つように定められています。
 			con = ds.getConnection();//DataSource型のインスタンスからConnectionを取得しています。
 		}catch (SQLException se) {
 			// TODO: handle exception

@@ -10,7 +10,7 @@
 <body>
   <div id="wrapper">
     <div id="main">
-		<FORM ACTION="../login.java" method="get">
+		<FORM ACTION="../LoginServlet" method="get">
 	        <p>ユーザーID</p>
 	        <p><input type="text"name="user" /></p>
 	        <p>Password</p>
