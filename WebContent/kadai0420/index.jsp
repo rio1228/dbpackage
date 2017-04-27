@@ -32,8 +32,8 @@
   	</div>
     <div id="main">
       <a href="login.jsp">ログイン</a>
-      <a href="index.html">商品一覧</a>
-      <a href="index.html">ログアウト</a>
+      <a href="category.jsp">商品一覧</a>
+      <a href="logout.jsp">ログアウト</a>
     </div>
   </div>
 </body>
