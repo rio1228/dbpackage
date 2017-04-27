@@ -32,7 +32,9 @@
   	</div>
     <div id="main">
       <a href="login.jsp">ログイン</a>
-      <a href="category.jsp">商品一覧</a>
+      <form action="../CategoryServlet" method="get">
+      	<input type="submit" value="商品一覧">
+      </form>
       <a href="logout.jsp">ログアウト</a>
     </div>
   </div>
