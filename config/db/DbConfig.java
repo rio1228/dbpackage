@@ -16,7 +16,7 @@ public interface DbConfig {
 	 * public static finalをつけなくても同じ意味として捉えられる
 	 */
 	String DB_NAME = "taiken";
-	String USER_ID = "";
+	String USER_ID = "root";
 	String USER_PASS = "";
 	String JENDI_NAME ="java:comp/env/jdbc/";
 

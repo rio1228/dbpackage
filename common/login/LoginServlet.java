@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		HttpSession session = request.getSession(false);
+		HttpSession session = null;//request.getSession(false);
 		if(session == null){
 	   	    session = request.getSession(true);
 		}

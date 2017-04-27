@@ -4,7 +4,7 @@
 <%@ page session="true" %>
 <%
 	session.setAttribute("status", null);
-	session.getAttribute("name");
+	String name = (String)session.getAttribute("name");
 	String login = request.getRequestURI();
 	session.setAttribute("login_uri", login);
 %>
@@ -20,7 +20,7 @@
   <div id="wrapper">
   	<div id ="header">
   		<c:choose>
-			<c:when test="${status!=null}">
+			<c:when test="${name!=null}">
 				<DIV id="name">
 					<%
 						String username = (String)session.getAttribute("user_name");

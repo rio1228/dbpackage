@@ -60,14 +60,14 @@ public class LoginCheck {
 	 * isExistメソッドは送られてきたユーザーIDとパスワードが一致するのかを調べるメソッド
 	 * @param user_id
 	 * @param pass
-	 * @return true
+	 * @return String
 	 */
 	public String userName(String user_id,String pass){
 		String user_name = null;
 		ResultSet rs = null;
-		String sql = " SELECT"+ USER_NAME_COLUMN +"FROM "+ USER_INFO_TBL +" WHERE "+ USER_ID_COLUMN +"  = " + user_id + USER_PASS_COLUMN + "="+pass;
+		String sql = " SELECT "+ USER_NAME_COLUMN +" FROM "+ USER_INFO_TBL +" WHERE "+ USER_ID_COLUMN +" = " + user_id +" AND "+ USER_PASS_COLUMN + " = "+pass;
 
-			boolean is_sql = this.isSqlExist(sql);
+			boolean is_sql = this.isSqlExist(sql);//falseになってる
 			if(is_sql){
 				try {
 					rs = stmt.executeQuery(sql);
