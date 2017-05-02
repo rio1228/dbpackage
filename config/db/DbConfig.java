@@ -21,4 +21,5 @@ public interface DbConfig {
 	String JENDI_NAME ="java:comp/env/jdbc/";
 
 	Connection getConnection();
+
 }
