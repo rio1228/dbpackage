@@ -20,6 +20,7 @@ import myclass.ProductCategory;
 public class CategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String PRODUCT_INFO_TBL = "SHOU";
+	private static final String DISOACHER_NAME = "kadai0420/category.jsp";
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -28,6 +29,7 @@ public class CategoryServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,12 +43,12 @@ public class CategoryServlet extends HttpServlet {
 		}
 
 		ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
-		String sql = " SELECT * FROM "+ PRODUCT_INFO_TBL;
+		String sql = " SELECT s_name FROM "+ PRODUCT_INFO_TBL;
 		ProductCategory pc = new ProductCategory();
 		array = pc.strArray(sql);
 		session.setAttribute("product_array", array);
 
-		RequestDispatcher dis = request.getRequestDispatcher("category.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher(DISOACHER_NAME);
 		dis.forward(request, response);
 
 	}

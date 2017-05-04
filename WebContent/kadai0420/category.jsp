@@ -18,7 +18,11 @@
 </head>
 <body>
 	<div id="wrapper">
-		<% out.print(array.get(0)); %>
+		<%
+			for(int i=0; i<array.size(); i++){
+				out.println("<a href="+array.get(i).get(1)+".jsp>"+array.get(i).get(0)+"</a><br>");
+			}
+		%>
 	</div>
 </body>
 </html>
